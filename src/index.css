@@ -1,0 +1,177 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #130c09;
+  --color-panel: #241510;
+  --color-panel-soft: #2b1a13;
+  --color-copper: #d58d4b;
+  --color-amber: #f09a43;
+  --color-sand: #c9a875;
+  --color-muted: #b59673;
+  --color-line: #4a2c1e;
+  --font-mono: "Courier New", "Lucida Console", monospace;
+}
+
+:root {
+  font-family: "Courier New", "Lucida Console", monospace;
+  color: #f4eee7;
+  background: #130c09;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 14px;
+  font-feature-settings: "tnum";
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button,
+a,
+input,
+select {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #f09a43;
+  outline-offset: 3px;
+}
+
+::selection {
+  background: #d58d4b;
+  color: #130c09;
+}
+
+.shimmer {
+  background: linear-gradient(100deg, #241510 30%, #38251a 50%, #241510 70%);
+  background-size: 220% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  to {
+    background-position-x: -220%;
+  }
+}
+
+.nav-link {
+  position: relative;
+  padding: 25px 0;
+  color: #eee6dc;
+  font-size: 16px;
+}
+
+.nav-link:hover,
+.nav-active {
+  color: #f09a43;
+  font-weight: 700;
+}
+
+.nav-active::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background: #d58d4b;
+  content: "";
+}
+
+.header-button {
+  display: inline-flex;
+  width: 100px;
+  height: 35px;
+  min-height: 35px;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border-radius: 6px;
+  background: #d58d4b;
+  padding: 0 12px;
+  color: #130c09;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.price-range-thumb {
+  pointer-events: none;
+}
+
+.price-range-thumb::-webkit-slider-runnable-track {
+  height: 4px;
+  background: transparent;
+}
+
+.price-range-thumb::-webkit-slider-thumb {
+  width: 18px;
+  height: 18px;
+  appearance: none;
+  border: 3px solid #130c09;
+  border-radius: 9999px;
+  background: #d58d4b;
+  box-shadow: 0 0 0 1px #d58d4b;
+  pointer-events: auto;
+}
+
+.price-range-thumb::-moz-range-track {
+  height: 4px;
+  background: transparent;
+}
+
+.price-range-thumb::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border: 3px solid #130c09;
+  border-radius: 9999px;
+  background: #d58d4b;
+  box-shadow: 0 0 0 1px #d58d4b;
+  pointer-events: auto;
+}
+
+.profile-link {
+  display: flex;
+  min-height: 36px;
+  align-items: center;
+  gap: 12px;
+  border-left: 4px solid transparent;
+  padding: 0 10px;
+  color: #d58d4b;
+}
+
+.profile-link-active {
+  border-left-color: #d58d4b;
+  background: #2b1a13;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
